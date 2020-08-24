@@ -1,0 +1,202 @@
+- const a1 = ["Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in phun tích điện","Máy ép gỗ chuẩn nano"]
+- const a2 = ["Máy khoan CNC điện","Máy phay đa năng 3R","Máy hàn, cắt kim loại","Máy in phun tích điện"]
+
+mixin list(name,arr)
+    .side__list
+        a(href="#")
+            span.d-flex
+                img(src="./assets/images/megadrop2.png", alt="").side__list__img
+                h3= name
+        ul
+            each item in arr
+                li
+                    a(href="#")
+                        i(class="fas fa-caret-right")
+                        = item
+.wrapper
+    header.header
+        .container
+            .header__top
+                .icon
+                    ul.icon__list
+                        li.icon__item.active
+                            a(href="#")
+                                i(class="fab fa-facebook-f").align-center
+                        li.icon__item
+                            a(href="#")
+                                img(src="./assets/images/gmail.png", alt="gmail icon").align-center
+                        li.icon__item
+                            a(href="#")
+                                i(class="fab fa-instagram").align-center
+                        li.icon__item
+                            a(href="#")
+                                i(class="fab fa-twitter").align-center
+                .header__top__login
+                    .header__top__box
+                        a(href="#").btn.btn--register Đăng Kí          
+                    .header__top__box
+                        a(href="#").btn.btn--login Đăng Nhập            
+    .container
+        .contact
+            a(href="index.html").contact__logo
+                img(src="./assets/images/Logo.png", alt="logo")
+            .contact__hotline
+                div(style={"margin-left":"187px"}).contact__hotline-content
+                    h3.contact__hotline-title Hotline :
+                    spancontactr__hotline-des (04) 9500 9650 -(04) 9500 8850
+                .contact__hotline-content
+                    h3.contact__hotline-title Đặt hàng nhanh :
+                    span.contact__hotline-des (04) 9500 9650 -(04) 9500 8850
+            .contact__search-bar.icon-search                    
+                    input(type="text" placeholder="Tìm kiếm...").contact__search-bar--rounded                  
+    .main-menu.bg-black    
+        .container
+            nav.menu
+                ul.menu__list
+                    li.menu__item.active.hover-me
+                        a(href="#").menu__link Trang chủ
+                        .sub-menu-home
+                            .sub-menu-home__list
+                                .side
+                                    +list("MÁY KHOAN ĐA NĂNG CNC",a1)
+                                    +list("MÁY ÉP NHỰA THỦ CÔNG",a2)
+                                .side
+                                    +list("MÁY CẮT PLATMAR",a1)
+                                    +list("MÁY UỐN TÔN ĐIỆN",a2)
+                                .side
+                                    +list("MÁY PHAY CÔNG NGHIỆP",a1)
+                                    +list("MÁY NÉN KHÍ CNC",a2)
+                                .side
+                                    img(src="./assets/images/megadrop.png", alt="").side__img
+                    li.menu__item
+                        a(href="#").menu__link Giới thiệu
+                        - const arrSubmenu1 = ["Giới thiệu chung","Hệ thống cửa hàng","Chính sách ưu đãi","Thông tin tuyển dụng"]
+                        .sub-menu-about-1
+                            ul
+                                li
+                                    a(href="#")
+                                        i(class="fas fa-caret-right")
+                                        |Giới thiệu chung
+                                    .sub-menu-about-2
+                                        ul
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A                                                      
+                                            li.active.text-white
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A1
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A2
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A3
+                                li.active.text-white
+                                    a(href="#")
+                                        i(class="fas fa-caret-right")
+                                        |Hệ thống cửa hàng
+                                    .sub-menu-about-2
+                                        ul
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A                                                      
+                                            li.active.text-white
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A1
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A2
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A3
+                                li
+                                    a(href="#")
+                                        i(class="fas fa-caret-right")
+                                        |Chính sách ưu đãi
+                                    .sub-menu-about-2
+                                        ul
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A                                                      
+                                            li.active.text-white
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A1
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A2
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A3
+                                li
+                                    a(href="#")
+                                        i(class="fas fa-caret-right")
+                                        |Thông tin tuyển dụng
+                                    .sub-menu-about-2
+                                        ul
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A                                                      
+                                            li.active.text-white
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A1
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A2
+                                            li
+                                                a(href="#")
+                                                    i(class="fas fa-caret-right")
+                                                    |Hệ thống cửa hàng A3
+                    - const arrMenu = ["Sản Phẩm","Tin Khuyến Mãi","Dịch Vụ","Liên hệ"]
+                    for item in arrMenu    
+                        li.menu__item
+                            a(href="#").menu__link= item       
+            .cart
+                a(href="#").cart__icon
+                    img(src="./assets/images/cart-icon.png", alt="card-icon")
+                .cart__dropdown
+                    ul.cart__list
+                        li.cart__item
+                            img(src="./assets/images/Untitled-10.png", alt="").cart-image
+                            .cart__desc
+                                h3  máy khoan black decker
+                                p 1 x 
+                                    span 1.250.000 Đ
+                            .cart__close
+                                i(class="fas fa-times")
+                        li.cart__item
+                            img(src="./assets/images/Untitled-9.png", alt="").cart-image
+                            .cart__desc
+                                h3  máy khoan black decker
+                                p 1 x 
+                                    span 1.250.000 Đ
+                            .cart__close
+                                i(class="fas fa-times")
+                        li.cart__item
+                            img(src="./assets/images/Untitled-16.png", alt="").cart-image
+                            .cart__desc
+                                h3  máy khoan black decker
+                                p 1 x 
+                                    span 1.250.000 Đ
+                            .cart__close
+                                i(class="fas fa-times")
+                        li.cart__item.justify-flex-end
+                            .cart__desc.mr-3
+                                h3 Tổng tiền: 
+                                    span 4.560.000 Đ
+                                a(href="#").btn.btn--orange THANH TOÁN
+            .clear
