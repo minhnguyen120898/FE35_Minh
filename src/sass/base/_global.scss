@@ -16,6 +16,7 @@ body {
     color: $color-black;
     background-color: white;
     font-size: 1.4rem;
+    overflow-x: hidden;
 }
 img {
     display: block;
@@ -45,11 +46,19 @@ a {
     flex-wrap: wrap;
     margin: 0 -15px;
 }
-.col-12,.col-6,.col-lg-6 {
+.col-12,.col-6,.col-lg-6,.col-9,.col-3 {
     position: relative;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+}
+.col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
 }
 .col-6 {
     flex: 0 0 50%;
@@ -63,6 +72,9 @@ a {
 .active {
     background-color: $color-orange;
     color: white;
+    p {
+        color: white !important;
+    }
 }
 .active-black {
     background-color: $color-black;
@@ -87,6 +99,9 @@ a {
 .bg-white{
     background-color: white;
 }
+.bg-smoke {
+    background-color: $color-smoke;
+}
 .d-flex{
     display: flex;
 }
@@ -95,6 +110,12 @@ a {
 }
 .justify-content-center{
     justify-content: center;
+}
+.pt-1 {
+    padding-top: 25px;
+}
+.m-0 {
+    margin: 0;
 }
 .mr-3 {
     margin-right: 20px;
@@ -112,6 +133,13 @@ a {
     color:red;
     font-size: 14px;
     font-weight: 600;            
+}
+.product-price-2 {
+    display: inline-block;
+    color:red;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px 0px 10px;
 }
 .rated{
     color: $color-orange;
@@ -134,19 +162,25 @@ a {
     font-family: $my-font;
     font-size: 1.4rem;
     cursor: pointer;
+    text-transform: uppercase;
 }
 .btn--orange{
-    @include btn($color-orange,white,20px,10px,8px);
+    @include btn($color-orange,white,10px,20px,8px);
 }
 .btn-buyNow{
-    @include btn($color-orange,white,10px,10px,8px);
+    @include btn($color-orange,white,10px,20px,8px);
 }
 .btn-detail{
     @include btn(black,white,10px,10px,8px);
     margin-left: 15px;
 }
+.btn-detail-s{
+    @include btn(transparent,black,10px,20px,8px);
+    margin-left: 15px;
+    border: 1px solid black;
+}
 .btn-new{
-    @include btn(none,$text-main,10px,10px,0px);
+    @include btn(none,$text-main,10px,20px,0px);
 }
 .big-font{
     font-size: 72px;
