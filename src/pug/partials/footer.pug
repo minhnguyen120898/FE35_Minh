@@ -1,0 +1,92 @@
+mixin footer-title(name)
+    span.d-flex
+        img(src="./assets/images/megadrop2.png", alt="").footer__icon
+        p.footer__title= name
+footer.footer
+    .container.mb-5.mt-5
+        .row
+            .col-12.col-md-3
+                +footer-title("VỀ CHÚNG TÔI")
+                p.footer__text.
+                    Công ty Cổ phần Công nghệ DKT đã và đang khẳng định được vị trí
+                    hàng đầu trong lĩnh vực Thương mại điện tử
+                p
+                    i(class="fas fa-map-marker-alt") 
+                    |Tầng 4 - Tòa nhà Hanoi Group 442 Độn Cần Ba Đình - Hà Nội
+                p
+                    i(class="fas fa-envelope")
+                    |support@dkt.com.vn
+                p
+                    i(class="fas fa-mobile-alt")
+                    |(84-4) 66558868 - (84-4) 378668904
+            mixin footer__col(x,array)
+                .col-12.col-md-2
+                    +footer-title(x)
+                    ul.footer__list
+                        for item in array
+                            li
+                                a(href="#")
+                                    = item
+            +footer__col("CHÍNH SÁCH",cs)
+            +footer__col("DỊCH VỤ & HỖ TRỢ",dv)
+            +footer__col("TIN TỨC - SỰ KIỆN",tt)
+            .col-12.col-md-2
+                +footer-title("KẾT NỐI")
+                mixin footer-ic()
+                    li
+                        a(href="#")
+                            block
+                ul.footer__list
+                    +footer-ic()
+                        i(class="fab fa-facebook-f")
+                        span Facebook
+                    +footer-ic()
+                        i(class="fab fa-twitter")
+                        span Twitter
+                    +footer-ic()
+                        img(src="./assets/images/gmail.png", alt="gmail icon").d-inline-block
+                        span Google
+                    +footer-ic()
+                        i(class="fab fa-skype")
+                        span Skype      
+                    +footer-ic()
+                        i(class="fab fa-instagram")
+                        span Instagram           
+        hr
+        .row
+            .col-12.col-lg-6
+                h4 Thanh toán:
+                .footer__bank
+                    for item in footer_logo
+                        .footer__bank__logo
+                            img(src=item, alt="")
+            .col-12.col-lg-6
+                h4 Giải đáp nhanh:
+                .footer__reply
+                    .footer__reply__box
+                        span.footer__reply--cirle
+                            i(class="fas fa-phone-alt")
+                        div.footer__reply--right 
+                            p Tư vấn miễn phí(24/7)
+                            span.footer__reply__phone 1900 650 650
+                    .footer__reply__box
+                        span.footer__reply--cirle
+                            i(class="far fa-comments")
+                        div.footer__reply--right 
+                            p Góp ý - phản hồi - thắc mắc
+                            span.footer__reply__phone 1900 650 650
+    .footer__bg
+        .container
+            .row
+                .col-12.col-lg-6
+                    .d-flex
+                        p Bản quyền thuộc về 
+                            span.text-white Design Team.
+                        p Phát triển bởi 
+                            span.text-white Bizweb.                    
+                .col-12.col-lg-6
+                    ul.footer__bottom
+                        for item in footerBottom
+                            li
+                                a(href="#")
+                                = item

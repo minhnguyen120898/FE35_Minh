@@ -1,0 +1,91 @@
+.footer {
+    color: $text-main;
+    &__icon {
+        @include icon4(10px);
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+    }
+    &__text {
+        font-size: 13px;
+        font-weight: 300;
+    }
+    a {
+        color: $text-main;
+    }
+    .fas,.fab{
+        margin-right: 10px;
+        color: $text-main;
+    }
+    .d-inline-block {
+        display: inline-block;
+        margin-right: 5px;
+        color: $text-main;
+    }
+    .footer__list {
+        padding: 0;
+        li {
+            margin-bottom: 15px;
+        }
+    }
+    .row {
+        justify-content: space-between;
+    }
+    &__bank {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        &__logo{
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    &__reply{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &__box{
+            width: 50%;
+            display: flex;
+        }
+        &--cirle{
+            position: relative;
+            display: inline-block;
+            border: 1px solid $color-orange;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            i {
+                color: $color-orange !important;
+                position: absolute;
+                top: 39%;
+                left: 38%;
+            }
+        }
+        &--right{
+            // float: right;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        &__phone {
+            color: red;
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+    &__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        li {
+            margin-right: 10px;
+        }
+    }
+    &__bg {
+        background-color: #252525;
+    }
+}
