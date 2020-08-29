@@ -68,7 +68,51 @@ a {
     flex: 0 0 100%;
     max-width: 100%;
 }
-
+.breadcrumb {
+    padding: 10px 0;
+    li {
+        display: inline-block;
+        font-size: 18px;
+    }
+    li+li:before {
+        padding: 8px;
+        color: black;
+        content: ">\00a0";
+    }
+    a {
+        display: inline;
+        color: $text-main;
+        text-decoration: none;
+    }
+    li a:hover{
+        color: #01447e;
+        text-decoration: underline;
+    }
+    li:nth-child(2) a{
+        color: black;
+    }
+}
+.border{
+    border: 1px solid $color-slide;
+    height: 20px;
+    width: 20px;
+    margin: 0 10px;
+}
+.red {
+    background-color: rgb(243, 47, 47);
+}
+.yellow{
+    background-color: rgb(245, 245, 32);
+}
+.blue {
+    background-color: #01447e;
+}
+.silver{
+    background-color: silver;
+}
+.black {
+    background-color: black;
+}
 .active {
     background-color: $color-orange;
     color: white;
@@ -79,6 +123,9 @@ a {
 .active-black {
     background-color: $color-black;
     color: $color-orange;
+    a {
+        color: $color-orange;
+    }
 }
 .align-center {
     position: absolute;
@@ -89,6 +136,10 @@ a {
 }
 .text-white{
     color: white !important;
+}
+.text-secondary{
+    color: $text-main;
+    font-size: 14px;
 }
 .bg-secondary {
     background-color: $color-slide;
@@ -105,6 +156,7 @@ a {
 .d-flex{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 .justify-flex-end{
    justify-content: flex-end;
@@ -112,6 +164,7 @@ a {
 .justify-content-center{
     justify-content: center;
 }
+
 .pt-1 {
     padding-top: 25px;
 }
@@ -130,8 +183,20 @@ a {
 .mb-5 {
     margin-bottom: 50px;
 }
+.mt-2 {
+    margin-top: 15px;
+}
 .mt-5 {
     margin-top: 50px;
+}
+.pb-3 {
+    padding-bottom: 25px;
+}
+.pl-2 {
+    padding-left: 15px;
+}
+.pt-5 {
+    padding-top: 50px;
 }
 .border-bottom {
     @extend %border-b;
@@ -148,6 +213,7 @@ a {
     font-weight: 700;
     margin: 0px 0px 10px;
 }
+
 .rated{
     color: $color-orange;
 }
@@ -156,8 +222,11 @@ a {
     margin-left: 5px;
     font-style: italic;
 }
+.text-black {
+    color:black;
+    font-weight: 600;
+}
 .clear {
-    position: relative;
     z-index: -2;
 }
 .clear::after{

@@ -1,0 +1,158 @@
+.listpage {
+    &__wrap {
+        @include  flex(none, none);
+    }
+    &__menu {
+        width: 25%;
+        padding-right: 15px;
+        ul {
+            padding:0;
+            line-height: 40px;
+            margin:0;
+        }
+        &__list {
+            margin-bottom: 30px;
+        }
+        &__title {
+            a {
+                height: 60px;
+                line-height: 60px;
+                font-size: 14px;
+                font-weight: 700;              
+            }
+            .fas {
+                margin: 0 15px 0 10px;
+            }
+        }
+        &__item{
+            @extend %border;
+            border-top: none;
+            h3 {
+                margin: 10px 0;
+                font-size: 13px;
+                color: $text-main;
+            }
+        }
+        &__item:hover{
+            background-color: black;
+            color: $color-orange;
+        }
+        &__item:hover h3{
+            color: $color-orange;
+        }
+    }
+    &__prod {
+        width: 75%;
+        padding-left: 15px;
+    }
+    &__order {
+        height: 60px;
+        line-height: 60px;
+        @extend %border-b;
+        &__left {
+            @include  flex(space-around,center);
+            float: left;
+        }
+        &__right {
+            float: right;
+            height: 100%;
+            @include  flex(center,center);
+        }
+        &__type {
+            margin-right: 15px;
+        }
+        &__box {
+            @extend %border;
+            padding: 10px;
+            margin-right: 5px;
+            .fa-bars {
+                color: $color-orange;
+            }
+        }
+        #order,#order1{
+            padding: 9px 30px 7px 0;
+            color: $text-main;
+            @extend %border;
+        }
+    }
+    &__product {
+        margin-top: 40px;
+        &__list {
+            margin: 0;
+            padding: 0;
+        }
+        &__box {
+            @extend %border;
+            box-shadow: 0px 2px 4px $color-slide;
+            margin-bottom: 30px;
+            &__content {
+                float: left;
+                width: 75%;
+                padding-left: 15px;
+            }
+        }
+        &__box:hover {
+            background-color: $color-orange;
+            color:  white;
+            .rated {
+                color: white;
+            }
+            .btn-buyNow {
+                background-color: black;
+            }
+        }
+        &__img {
+            float: left;
+            width: 160px;
+            height: 160px;
+            margin-top: 20px;
+            padding-left: 15px;
+        }
+    }
+    .pagination {
+        display: inline-block;
+        float: right;
+        a {
+            color: $text-main;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 20px 5px 50px;
+        }
+
+    }
+}
+.promotion {
+    &__item {
+        @include  flex(space-between,center);
+        @extend %border;
+        border-top: none;
+    }
+    &__item:hover{
+        background-color: black;
+        color: $color-orange;
+    }
+    &__img{
+        margin-left: 15px;
+        width: 80px;
+        height: 80px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }  
+    &__content {
+        width: 60%;
+        h4 {
+            line-height: 25px;
+            margin: 15px 0 5px
+        }
+    }  
+    &__wrap-link {
+        width: 100%;
+        height: 100%;
+        z-index: 4;
+    }       
+}

@@ -304,6 +304,48 @@
             }
         }
     }
+    .listpage {
+        &__prod {
+            width: 100%;
+            padding: 0 15px;
+        }
+        &__menu {
+            width: 100%;
+            padding: 0 15px;
+        }
+        &__order{
+            &__show{
+                display: none;
+            }
+            &__right{
+                display: none;
+            }
+        }
+        &__product{
+            &__box{
+                &__content {
+                    width: 100%;
+                    h3 {
+                        padding-left: 15px;
+                    }
+                    .text-secondary {
+                        display: none;
+                    }
+                }
+            }
+            &__img {
+                float: none;
+                margin: 20 auto 0;
+                padding: 0;
+            }
+        }
+        .pagination {
+            a {
+                padding: 8px;
+                margin-left: 0;
+            }
+        }
+    }
 }
 @media screen and (max-width: 500px){
     .container{

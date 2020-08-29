@@ -1,3 +1,33 @@
+@mixin submenu($val) {
+    display: block;
+    width: $val;
+    background-color: white;
+}
+@mixin icon4($val){
+    object-fit: contain;
+    height: auto;
+    margin-right: $val;
+}
+@mixin prod-img($index) {
+    object-fit: cover;
+    cursor: pointer;
+    z-index: $index;
+    margin: 0 auto;
+}
+@mixin btn($bgcolor,$color,$x,$y,$mb){
+    background-color: $bgcolor;
+    border: none;
+    color: $color;
+    text-align: center;
+    padding: $x $y;
+    margin-bottom: $mb;
+}
+@mixin flex($jus,$align){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $jus;
+    align-items: $align;
+}
 %border-r {
     border-right: 1px solid $color-smoke;
 }
@@ -27,28 +57,4 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 20px;
-}
-@mixin submenu($val) {
-    display: block;
-    width: $val;
-    background-color: white;
-}
-@mixin icon4($val){
-    object-fit: contain;
-    height: auto;
-    margin-right: $val;
-}
-@mixin prod-img($index) {
-    object-fit: cover;
-    cursor: pointer;
-    z-index: $index;
-    margin: 0 auto;
-}
-@mixin btn($bgcolor,$color,$x,$y,$mb){
-    background-color: $bgcolor;
-    border: none;
-    color: $color;
-    text-align: center;
-    padding: $x $y;
-    margin-bottom: $mb;
 }

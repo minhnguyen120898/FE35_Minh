@@ -1,0 +1,120 @@
+extends index.pug
+block main-content
+    section.listpage
+        .container
+            ul.breadcrumb
+                li 
+                    a(href="index.html") Home
+                li
+                    a(href="#") Danh mục sản phẩm
+            .listpage__wrap
+                .listpage__menu
+                    mixin listpage-menu(name,lp_arr)
+                        .listpage__menu__list
+                            .listpage__menu__title
+                                .active-black
+                                    a(href="#")
+                                        block
+                                        = name
+                            ul.d-none                          
+                                each item in lp_arr
+                                    li.listpage__menu__item
+                                        span.d-flex
+                                            img(src="./assets/images/megadrop2.png", alt="").product__icon4.color-secondary
+                                            a(href="#")
+                                                h3= item
+                    +listpage-menu("Danh mục sản phẩm",lp_menu2)  
+                        i(class="fas fa-bars")
+                    +listpage-menu("Tìm theo mức giá",lp_menu3)   
+                        i(class="fas fa-dollar-sign")           
+                    .listpage__menu__list
+                        .listpage__menu__title
+                            .active-black
+                                a(href="#")
+                                    i(class="fas fa-paint-brush")
+                                    |Tìm theo màu sắc
+                        ul.d-none   
+                            mixin color-list(item)
+                                li.listpage__menu__item
+                                    a(href="#").d-flex
+                                        span(class!=attributes.class).border
+                                        h3= item 
+                            +color-list("Màu đỏ(45)").red
+                            +color-list("Màu vàng(32)").yellow
+                            +color-list("Màu xanh(27)").blue
+                            +color-list("Màu bạc(16)").silver  
+                            +color-list("Màu đen(9)").black     
+                    .listpage__menu__list.promotion
+                        .listpage__menu__title
+                            .active-black
+                                a(href="#")
+                                    i(class="fas fa-gift")
+                                    |Sản phẩm khuyến mại
+                        ul.d-none
+                            mixin promotion(src)
+                                li.promotion__item                                 
+                                    .promotion__img
+                                        a(href="#").promotion__wrap-link
+                                            img(src=src, alt="")
+                                    .promotion__content
+                                        h4
+                                            strong MÁY KHOAN BLACK DECKER
+                                        span.product-price 1.550.000 Đ
+                            each item in lp_promotion
+                                +promotion(item)                      
+                .listpage__prod
+                    .listpage__order.clear
+                        .listpage__order__left
+                            .listpage__order__type
+                                span.text-black Sắp xếp theo: 
+                                select#order(name="order")
+                                    option(value="Tên sản phẩm" selected) Tên sản phẩm 
+                                    option(value="Giá") Giá
+                            .listpage__order__show   
+                                span.text-black Show:
+                                select#order1(name="order1")
+                                    option(value="9" selected) 9
+                                    option(value="10") 10   
+                        .listpage__order__right
+                            .listpage__order__box
+                                i(class="fas fa-bars")
+                            .listpage__order__box    
+                                i(class="fas fa-th")
+                    block list-grid-content
+                        .listpage__product
+                            ul.listpage__product__list
+                                mixin li-listpage-prod(src)
+                                    li
+                                        .listpage__product__box.clear
+                                            .listpage__product__img
+                                                img(src=src, alt="")
+                                            .listpage__product__box__content
+                                                h3
+                                                    strong MÁY KHOAN BLACK DECKER
+                                                .row
+                                                    .col-12
+                                                        - for(let i = 0;i < 4; i++)
+                                                            i(class="fas fa-star").rated
+                                                        i(class="far fa-star")
+                                                        span.text-rate (12 đánh giá)
+                                                .row
+                                                    .col-12
+                                                        p.text-secondary
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. 
+                                                            Fusce dictum bibendum ligula ut euismod. 
+                                                            Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus
+                                                    .col-12
+                                                        span.product-price-2 2.350.000 Đ
+                                                .row.pb-3.mt-2
+                                                    .listpage__product__box__btn.pl-2
+                                                        a(href="#").btn.btn-buyNow Mua ngay
+                                                    .listpage__product__box__btn
+                                                        a(href="#").btn.btn-detail Xem chi tiết                                          
+                                each item in lp_product
+                                    +li-listpage-prod(item)
+                    .pagination
+                        a(href="#") Trang trước
+                        a(href="#").active 1
+                        - for(let i=2;i<4;i++)
+                            a(href="#")= i
+                        a(href="#") Trang cuối
