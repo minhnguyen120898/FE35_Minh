@@ -11,6 +11,14 @@
         flex: 0 0 25%;
         max-width: 25%;
     }
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .col-md-2 {
+        flex: 0 0 16.66%;
+        max-width: 16.66%;
+    }
 }
 @media screen and (max-width: 1139px){
     .sub-menu-home{
@@ -283,9 +291,17 @@
             }
         }
     }
-    .banner3 {
-        a {
-            margin-top: 20px;
+    .footer{
+        &__reply{
+            &__box {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        &__bottom {
+            li {
+                margin-right: 10px;
+            }
         }
     }
 }
