@@ -1,0 +1,162 @@
+.detail {
+    width: 75%;
+    padding-left: 15px;
+    &__product {
+        width: 100%;
+        @include flex(space-between,none);
+    }
+    &__image {
+        width: 42%;
+        &__group{
+            margin-top: 10px;
+            @include flex(space-between,center);
+            img {
+                width: 100%;
+                height: 100%;
+                @extend %border;
+            }
+        }
+        &__small {
+            width: 68px;
+            height: 68px;
+        }
+    }
+    &__content {
+        width: 58%;
+        padding-left: 15px;
+        h3 {
+            margin-top: 0;
+        }
+        &__link-comment {
+            a:before {
+                padding: 0 15px;
+                color: $text-main;
+                content: "|\00a0";
+                font-size: 15px;
+            }
+        }
+        .product-price-2,.text-secondary{
+            margin-bottom: 0;
+        }    
+        h4{
+            margin: 10px 0;
+        }
+        select {
+            width: 100%;
+            padding: 8px 0; 
+            margin-bottom: 7px;
+        }
+        input[type="number"] {
+            padding-top: 9px;
+            padding-bottom: 9px;
+            width: 108px;
+            margin: 5px 10px 8px 0;
+        }
+        .btn-buyNow {
+            margin-top: 5px;
+        }
+        .tooltip {
+            margin: 10px 20px 0 0;
+            position: relative;
+            display: inline-block;
+            padding: 2px 3px;
+            color: white;
+            img {
+                padding: 2px 0;
+            }
+            i,img {
+                margin-right: 5px;
+            }
+            @extend %border;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 20px;
+            background-color: black;
+            color: wheat;
+            text-align: center;
+            border-radius: 4px;
+            padding: 5px 0 3px;
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }        
+    }
+    &__desc {
+        margin-top: 50px;
+    }
+    &__nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        @include flex(none,center);
+        &__item {
+            padding: 7px 25px;
+            @extend %border;
+            border-bottom: none;
+        }
+    }
+    &__tab-content {
+        @extend %border;
+        padding-left: 15px;
+    }
+    &__tab__pane {
+        p:first-child {
+            margin-top: 0;
+            padding-top: 20px;
+        }
+    }
+    &__sameproduct {
+        width: 100%;
+        &__list{
+            @include  flex(space-between,center);
+            padding: 0;
+            margin: 0;
+        }
+        &__item{
+            width: 30%;
+            margin-bottom: 30px;
+            //@extend %border;
+            height: 325px;
+            position: relative;
+        }
+        &__box{
+            width: 100%;
+            height: 100%;
+            padding: 15px 10px;
+            transition: .55s all ease-out;
+            background: #fff;
+            box-shadow: 0 0 8px $color-smoke;
+            overflow: hidden;
+            text-align: center;
+            img {
+                @include prod-img(10);
+            }
+            h3 {
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+        &__group{
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+        }   
+        &__box:hover {
+            height: 355px;
+            z-index: 20;
+            box-shadow: 4px 4px 12px $color-smoke;
+            @extend %border-r;
+            @extend %border-b;
+            @extend %border-l1;
+        }
+        &__box:hover &__group {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

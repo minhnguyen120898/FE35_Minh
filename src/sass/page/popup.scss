@@ -1,0 +1,56 @@
+.popup {
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 50px 20px;
+    background-image: url(../assets/images/Untitled-47.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    h1 {
+        font-size: 30px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    p {
+        font-size: 16px;
+        text-align: center;
+    }
+    form {
+        width: 70%;
+        margin: 0 auto;
+        input[type=email] {
+            width: 100%;          
+            padding: 12px 20px;
+            margin: 15px auto;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button{
+            margin-top: 0;
+            width: 100%;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        label{
+            text-align: left;
+        }
+    }
+    &__close {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        text-align: center;
+        i {
+            color: $color-orange;
+            height: 100%;
+            line-height: 35px;
+        }
+    }
+}

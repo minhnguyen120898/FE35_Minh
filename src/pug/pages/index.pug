@@ -1,0 +1,283 @@
+html
+    head
+        meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")      
+        title Machine Company
+        block css
+            link(rel="stylesheet", href="css/style.css")
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto")
+            link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css")
+        block script
+            script(src="./js/script.js")
+    body
+        include ../base/base
+        block header
+            include ../partials/header
+        block main-content 
+            section#slider
+                .container
+                    .slider
+                        .slide  
+                            input(type="radio" name="slider" id="slide1" checked)
+                            input(type="radio" name="slider" id="slide2")
+                            input(type="radio" name="slider" id="slide3")
+                            .slide__wrap
+                                .slide__overflow
+                                    .slide__inner
+                                        mixin slideItems(title,name)
+                                            .slide__item
+                                                .slide__content 
+                                                    h3.slide__item__title= title
+                                                    p.big-font= name
+                                                    p.line-font
+                                                        i(class="far fa-check-circle") 
+                                                        |Thiết kế nhỏ gọn, phù hợp với mục đích
+                                                    p.line-font
+                                                        i(class="far fa-check-circle") 
+                                                        |Mạnh mẽ, bền bỉ và hiệu suất lớn hơn
+                                                    p.line-font
+                                                        i(class="far fa-check-circle") 
+                                                        |Khoan cắt với độ chính xác tuyệt đối
+                                                    a(href="#").btn.btn--orange ĐẶT HÀNG
+                                                .slide__image
+                                                    img(src="./assets/images/slide1.jpg", alt="slide1")
+                                        - for(let i = 0 ; i < 3 ; i++)
+                                            +slideItems("MÁY KHOAN ĐA NĂNG","DEWALT")
+                            #bullets
+                                label(for="slide1")
+                                label(for="slide2")
+                                label(for="slide3")
+                        .slide-right
+                            ul
+                                mixin li-right(name,desc)
+                                    li.slide-right__item(class!=attributes.class)
+                                        if block
+                                        block 
+                                        .slide-right__desc
+                                            h3= name
+                                            p= desc                                       
+                                +li-right("miễn phí vận chuyển","Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 100.000 Đ.")
+                                    i(class="fas fa-plane")
+                                +li-right("chính sách đổi trả","Nếu phát hiện lỗi của nhà sản xuất, chúng tôi sẽ đổi mới sản phẩm trong 7 ngày đầu tiên.").active
+                                    .loop-icon
+                                        img(src="./assets/images/loop2.png", alt="")        
+                                +li-right("Khuyến mại hàng tuần","Mỗi thứ 7 hàng tuần đều có chương trình giảm giá và khuyễn mãi lớn.")
+                                    i(class="fas fa-gift")       
+                                +li-right("cam kết hàng chính hãng","Chúng tôi cam kết bán hàng chính hãng 100% với tất cả các loại sản phẩm.").border-bottom
+                                    i(class="fas fa-thumbs-up")        
+            section.hightlight
+                .container.product
+                    mixin product__top-2(name)
+                        .product__top
+                            .product__title
+                                img(src="./assets/images/megadrop2.png", alt="").product__icon4
+                                h2 
+                                    strong= name
+                            .product__pagination
+                                button.btn.btn-pre
+                                    i(class="fas fa-caret-left")
+                                button.btn.btn-next
+                                    i(class="fas fa-caret-right")
+                    +product__top-2("SẢN PHẨM NỔI BẬT")
+                    .product__content
+                        .hightlight__menu
+                            ul.hightlight__menu__list
+                                li.hightlight__menu__item.active-black
+                                        span.d-flex
+                                            img(src="./assets/images/megadrop2.png", alt="").product__icon4
+                                            h3 Máy khoan, cắt CNC
+                                for item in menuColumn
+                                    li.hightlight__menu__item
+                                        span.d-flex
+                                            img(src="./assets/images/megadrop2.png", alt="").product__icon4.color-secondary
+                                            h3= item
+                                li.hightlight__menu__item(style={"height":"89px"})
+                                        span.d-flex
+                                            img(src="./assets/images/megadrop2.png", alt="").product__icon4.color-secondary
+                                            h3 Máy in laser màu 3D
+                            .arrow-bottom
+                                        span
+                        .product__prod
+                            .product__prod__wrap
+                                .product__prod__overflow
+                                    ul.product__prod__list
+                                        mixin li-prod-2light(src)                                           
+                                            .product__prod__box(class!=attributes.class)
+                                                span.product__prod__img
+                                                    img(src=src, alt="")
+                                                span.product-price 1.550.000 Đ
+                                                h3
+                                                    strong MÁY KHOAN BLACK DECKER
+                                                .row.mb-3
+                                                    .col-12
+                                                        - for(let i = 0;i < 4; i++)
+                                                            i(class="fas fa-star").rated
+                                                        i(class="far fa-star")
+                                                        span.text-rate (12 đánh giá)
+                                                .row.product__prod__group
+                                                    div
+                                                        a(href="#").btn.btn-buyNow Mua ngay
+                                                    div
+                                                        a(href="#").btn.btn-detail Xem chi tiết
+                                        for item in Arrliprod2light
+                                            li.product__prod__item
+                                                +li-prod-2light(item)
+            section.new 
+                mixin product-top(title)
+                    .product__top
+                        .product__title
+                            img(src="./assets/images/megadrop2.png", alt="").product__icon4
+                            h2 
+                                strong= title
+                        .product__pagination
+                            ul.product__category
+                                li.active
+                                    a(href="#").btn.btn-new.text-white Máy khoan
+                                for item in newArr1
+                                    li
+                                        a(href="#").btn.btn-new= item 
+                            button.btn.btn-pre
+                                i(class="fas fa-caret-left")
+                            button.btn.btn-next
+                                i(class="fas fa-caret-right")
+                .container.product
+                    +product-top("SẢN PHẨM MỚI")            
+                    .product__prod.new__product
+                        .product__prod__wrap
+                            .product__prod__overflow
+                                ul.product__prod__list.new__list
+                                    mixin li-prod-new(src)
+                                        li.product__prod__item.new__item
+                                            .product__prod__box.new__box
+                                                span.product__prod__img.new__img
+                                                    img(src=src, alt="")
+                                                span.product-price 1.550.000 Đ
+                                                h3
+                                                    strong MÁY KHOAN BLACK DECKER
+                                                .row.mb-3
+                                                    .col-12
+                                                        - for(let i = 0;i < 4; i++)
+                                                            i(class="fas fa-star").rated
+                                                        i(class="far fa-star")
+                                                        span.text-rate (12 đánh giá)
+                                                .row.product__prod__group.new__group
+                                                    div
+                                                        a(href="#").btn.btn-buyNow Mua ngay
+                                                    div
+                                                        a(href="#").btn.btn-detail Xem chi tiết
+                                    +li-prod-new("./assets/images/Untitled-17.png")
+                                    +li-prod-new("./assets/images/Untitled-16.png")
+                                    +li-prod-new("./assets/images/Untitled-15.png")
+            section.banner
+                .container
+                    .row.mt-3
+                        .col-12.col-lg-6
+                            a(href="#").bg-secondary
+                                img(src="./assets/images/banner-1(1).png", alt="").banner__img
+                        .col-12.col-lg-6
+                            a(href="#").bg-secondary
+                                img(src="./assets/images/banner-2.png", alt="").banner__img
+            section.hot
+                .container.product
+                    +product-top("SẢN PHẨM BÁN CHẠY")
+                    .product__prod.hot__product
+                        .product__prod__wrap
+                            .product__prod__overflow
+                                .row.hot__list
+                                    .hot__item
+                                        +li-prod-2light("./assets/images/Untitled-14.png").hot__box
+                                        +li-prod-2light("./assets/images/Untitled-7.png").hot__box
+                                    .hot__item-center
+                                        .hot__box-center
+                                                span.product__prod__img
+                                                    img(src="./assets/images/Untitled-22.png", alt="")
+                                                span.product-price 1.550.000 Đ
+                                                h3
+                                                    strong MÁY KHOAN BLACK DECKER
+                                                .row.mb-3
+                                                    .col-12
+                                                        - for(let i = 0;i < 4; i++)
+                                                            i(class="fas fa-star").rated
+                                                        i(class="far fa-star")
+                                                        span.text-rate (12 đánh giá)
+                                                .row.product__prod__group
+                                                    div
+                                                        a(href="#").btn.btn-buyNow Mua ngay
+                                                    div
+                                                        a(href="#").btn.btn-detail Xem chi tiết
+                                    .hot__item
+                                        +li-prod-2light("./assets/images/Untitled-12.png").hot__box
+                                        +li-prod-2light("./assets/images/Untitled-13.png").hot__box
+            section.banner2
+                .container
+                    .row.m-0
+                        .col-12.col-lg-6.bg-smoke
+                            span
+                                img(src="./assets/images/banner-4.png", alt="")
+                        .col-12.col-lg-6.pt-1.d-none.bg-smoke
+                            span.banner2--text-big
+                                |ROCKET WOKARU
+                            p.
+                                Máy cắt, khoan đa năng tích hợp điều khiển từ xa loại nhỏ
+                                thích hợp với các hộ gia đình
+                            .row.banner2__btn-group
+                                div
+                                    a(href="#").btn.btn-buyNow MUA NGAY
+                                div
+                                    a(href="#").btn.btn-detail-s CHI TIẾT
+            section.lastProd
+                .container
+                    +product__top-2("HÀNG MỚI VỀ")           
+                    .row
+                        mixin lasted-Prod(src)
+                            .lastProd__box.clear
+                                .lastProd__avatar
+                                    img(src=src, alt="").lastProd__img
+                                .lastProd__content
+                                    h3 MÁY KHOAN CNC 3D
+                                    .lastProd__rate
+                                        - for(let i = 0;i < 4; i++)
+                                            i(class="fas fa-star").rated
+                                        i(class="far fa-star")
+                                        span.text-rate (12 đánh giá)
+                                    p.lastProd__desc.
+                                        Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...
+                                    span.product-price-2 1.550.000 Đ
+                                    .lastProd__btn-group
+                                        div
+                                            a(href="#").btn.btn-buyNow MUA NGAY
+                                        div
+                                            a(href="#").btn.btn-detail XEM CHI TIẾT
+                        .col-12.col-lg-6
+                                +lasted-Prod("./assets/images/den.png")
+                        each item in lasted_Prod
+                            .col-12.col-lg-6.d-none
+                                +lasted-Prod(item)
+            section#slide2
+                .container    
+                    .slide2
+                        input(type="radio" name="slir" id="sli1" checked)                      
+                        each item in input
+                            input(type="radio" name="slir" id= item)                       
+                        .slide2__slider.clear
+                            .slide2__overflow
+                                .slide2__inner
+                                    each item in slide2      
+                                        .slide2__item
+                                            img(src= item, alt="item")
+                        #controls
+                            label(for="sli1")
+                            each item in input
+                                label(for= item)
+            section.banner3
+                .container
+                    .banner3__content
+                        .row
+                            h3.banner3__title Đăng kí để nhận tin tức khuyến mại hàng tuần
+                        .row
+                            .col-12.col-lg-9
+                                input(type="text" placeholder="Nhập email của bạn...")
+                            .col-12.col-lg-3
+                                a(href="#").btn.btn--orange ĐĂNG KÍ
+        block footer
+            include ../partials/footer 

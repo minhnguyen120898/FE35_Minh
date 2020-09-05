@@ -1,0 +1,39 @@
+.login {
+    label{
+        font-weight: 800;
+        span {
+            display: inline-block;
+            margin-left: 5px;
+            color: red;
+            opacity: 0.8;
+        }
+    }
+    &__form {
+        margin-top: 30px;
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 15px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        a.text-orange{
+            display: inline-block;
+            font-style: italic;
+            float:right;
+        }
+        button {
+            display: block;
+            margin-bottom: 50px;
+        }
+    }
+    p.text-secondary{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 80%;
+    }
+    a.btn--orange {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,117 @@
+extends blog.pug
+block list-detail-product
+    .blogdetail
+        .blogdetail__item
+                a(href="blogdetail.html").blog__news__img
+                    img(src="./assets/images/blog1.png", alt="blogdetail")
+                h3 THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG
+                .blog__news__box
+                    p.blog__news__date.
+                        Thứ năm, ngày 23/10/2015 8:00 AM
+                    .blog__news__author
+                        i(class="fas fa-user")
+                        p 
+                            i Đăng bởi
+                            span.text-orange.
+                                Design Team
+                    p
+                        i(class="fas fa-comments")
+                        i 12 Bình luận
+                .blog__news__desc
+                    p. 
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of ...
+                    p.     
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of ...
+        mixin blogdetail-item(src)
+            .blogdetail__item
+                a(href="blogdetail.html").blog__news__img
+                    img(src=src, alt="blogdetail")(class!=attributes.class)
+                .blog__news__desc
+                    p. 
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of ...
+                    p.     
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of ...
+                    block
+        +blogdetail-item("./assets/images/blog2.png").blogdetail__img
+        +blogdetail-item("./assets/images/blog6.png").blogdetail__img
+             p.
+                But I must explain to you how all this mistaken idea of denounc
+                But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of denounc
+                But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of ...
+        .blogdetail__bottom
+            .blogdetail__bottom__tags
+                span TAGS:
+                each item in blogdetail_tags
+                    a(href="#") , 
+                        i= item
+                a(href="#")
+                    i máy khoan
+            .blogdetail__bottom__share            
+                span CHIA SẺ:
+                ul.blogdetail__bottom__list
+                    mixin icon__blogdetail()
+                        li.blogdetail__bottom__item(class!=attributes.class)
+                            a(href="#")
+                                block
+                    +icon__blogdetail().active
+                        i(class="fab fa-facebook-f")
+                    +icon__blogdetail()
+                        img(src="./assets/images/gmail.png", alt="gmail icon")
+                    +icon__blogdetail()
+                        i(class="fab fa-instagram")
+                    +icon__blogdetail()
+                        i(class="fab fa-twitter")
+        hr
+        .blogdetail__comment
+            .blogdetail__comment__all
+                h3.blogdetail__comment__title Bình luận:
+                mixin blg-box()
+                    .blogdetail__comment__box(class!=attributes.class)
+                        .blogdetail__comment__img
+                            img(src="./assets/images/comment.png", alt="")                    
+                        .blogdetail__comment__content
+                            h3 HOANG TRUONG ANH
+                            .blogdetail__comment__content__date 
+                                span Thứ năm, ngày 23/10/2015 8:00 AM
+                                a(href="#") Trả lời
+                            p But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                +blg-box()
+                +blg-box().intent
+                +blg-box()
+            .blogdetail__comment__your
+                h3 VIẾT BÌNH LUẬN CỦA BẠN:
+                form(action="#" method="post")
+                    .row
+                        .col-12.col-lg-6
+                            label(for="bname") Họ và tên:
+                                span *
+                            input(type="text" name="bname" required)
+                        .col-12.col-lg-6
+                            label(for="bemail") Email:
+                                span * 
+                            input(type="email" name="bemail" required)
+                    .row
+                        .col-12
+                            label(for="comment") Bình luận
+                            textarea(name="comment", cols="30", rows="10")
+                    button(type="submit").btn.btn-register BÌNH LUẬN

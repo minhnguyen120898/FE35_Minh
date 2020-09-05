@@ -1,0 +1,145 @@
+extends listpage.pug
+block breadcrumb
+    ul.breadcrumb
+        li 
+            a(href="index.html") Home
+        li
+            a(href="listpage.html") Danh mục sản phẩm
+        li
+            a(href="#") Máy khoan CNC 3D
+block list-detail-menu
+block list-detail-product
+    .detail
+        .detail__product
+            .detail__image
+                .detail__image__main
+                    img(src="./assets/images/detailm.png", alt="")
+                .detail__image__group
+                    each item in dp_img
+                        div.detail__image__small
+                            img(src=item, alt="")
+            .detail__content
+                h3
+                    strong MÁY KHOAN CNC 3D
+                .row.mb-2
+                    .col-12.d-flex
+                        - for(let i = 0;i < 4; i++)
+                            i(class="fas fa-star").rated
+                        i(class="far fa-star")
+                        span.text-rate (12 đánh giá)
+                        .detail__content__link-comment   
+                            span
+                                a(href="#") 
+                                    u Gửi bình luận của bạn
+                .row
+                    .col-12
+                        span.product-price-2 GNY: 2.350.000 Đ
+                hr
+                .row
+                    .col-12
+                        h4 Thông tin sản phẩm:
+                        p.text-secondary.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. 
+                            Fusce dictum bibendum ligula ut euismod. 
+                            Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus
+                hr
+                .row
+                    mixin select(name,val,arr)
+                        .col-6
+                            h4= name
+                            select(id!=attributes.id)
+                                option(value="" disable selected)= val
+                                each item in arr
+                                    option(value= item)= item
+                    +select("Size:","--Chọn size--",dp_select2)#detail-size
+                    +select("Màu sắc:","--Chọn màu--",dp_select3)#detail-color
+                hr
+                .row
+                    .col-12.d-flex
+                        input(type="number" min=1 value=1)
+                        a(href="#").btn.btn-buyNow Mua ngay 
+                .row
+                    .col-12.d-flex
+                        .tooltip.bg-fb
+                            i(class="fab fa-facebook-square") 
+                            span Like
+                            span.tooltiptext 0
+                        .tooltip.bg-tw
+                            i(class="fab fa-twitter")
+                            span Tweet 
+                        .tooltip.bg-gmail
+                            img(src="./assets/images/gmail.png", alt="gmail icon") 
+                            span.tooltiptext 0            
+                        .tooltip.bg-plus
+                            i(class="fas fa-plus-square") 
+                            span Share
+        .detail__desc 
+            ul.detail__nav#detailTab
+                mixin nav-detail-prod(name)
+                    li.detail__nav__item
+                        a(href="#" ).detail__nav__link
+                            h3= name  
+                li.detail__nav__item.active-black
+                        a(href="#" ).detail__nav__link
+                            h3 Thông tin sản phẩm     
+                each item in dp_nav
+                    +nav-detail-prod(item)
+            .detail__tab-content#detailcontentTab
+                .detail__tab__pane
+                    p.
+                        Raw denim you probably haven't heard of them jean shorts Austin. 
+                        Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
+                        Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. 
+                    p. 
+                        Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+                        Raw denim you probably haven't heard of them jean shorts Austin. 
+                        Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
+                        Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. 
+                    p.    
+                        Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+                        Raw denim you probably haven't heard of them jean shorts Austin. 
+                        Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
+                        Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. 
+                        Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+                    p.    
+                        Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+                        Raw denim you probably haven't heard of them jean shorts Austin. 
+                        Nesciunt tofu stumptown aliqua, retro synth master cleanse. 
+                        Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. 
+                        Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+                .detail__tab__pane.fade
+                .detail__tab__pane.fade
+        .detail__sameproduct
+            .product__top
+                    .product__title
+                        img(src="./assets/images/megadrop2.png", alt="").product__icon4
+                        h2 
+                            strong SẢN PHẨM TƯƠNG TỰ
+                    .product__pagination
+                        button.btn.btn-pre
+                            i(class="fas fa-caret-left")
+                        button.btn.btn-next
+                            i(class="fas fa-caret-right")
+            ul.detail__sameproduct__list 
+                mixin li-detailpage-prod(src)
+                    li.detail__sameproduct__item
+                        .detail__sameproduct__box.clear
+                            .detail__sameproduct__img
+                                img(src=src, alt="")
+                            .detail__sameproduct__box__content
+                                span.product-price 1.550.000 Đ
+                                h3
+                                    strong MÁY KHOAN BLACK DECKER
+                                .row.mb-3
+                                    .col-12
+                                        - for(let i = 0;i < 4; i++)
+                                            i(class="fas fa-star").rated
+                                        i(class="far fa-star")
+                                        span.text-rate (12 đánh giá)
+                                .row.detail__sameproduct__group
+                                    .detail__sameproduct__box__btn.pl-2
+                                        a(href="#").btn.btn-buyNow Mua ngay
+                                    .detail__sameproduct__box__btn
+                                        a(href="#").btn.btn-detail Xem chi tiết                                          
+                each item in dp_list
+                    +li-detailpage-prod(item)

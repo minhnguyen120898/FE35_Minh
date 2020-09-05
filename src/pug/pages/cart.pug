@@ -1,0 +1,54 @@
+extends index.pug
+block main-content 
+    .cartpage
+        .container
+            ul.breadcrumb
+                li 
+                    a(href="index.html") Home
+                li
+                    a(href="listpage.html") Giỏ hàng
+            hr
+            .cartpage__content
+                table
+                    thead
+                        tr
+                            each item in th
+                                th= item
+                    mixin table-tr(i,src)
+                        tr 
+                            td= i
+                            td.cartpage__img
+                                img(src=src, alt="")
+                            td
+                                span MÁY KHOAN CẮT ĐA NĂNG CNC
+                            td
+                                span 2.350.000 Đ
+                            td
+                                input(type="number", name="",min=1,value=1).cartpage__count
+                            td 
+                                span 2.350.000 Đ
+                            td 
+                                i(class="fas fa-times").cartpage__close
+                    tbody
+                        each item,n in data1
+                            +table-tr(n+1,item)
+            .cartpage__payment.clear
+                .cartpage__payment__box
+                    mixin cartpage-row(name,price)
+                        .row(class!=attributes.class)
+                            .col-7
+                                h4= name
+                            .col-5
+                                span= price
+                    +cartpage-row("TỔNG TIỀN:","6.850.000 Đ")
+                    +cartpage-row("THUẾ(VAT):","685.000 Đ")
+                    +cartpage-row("THANH TOÁN:","7.520.000 Đ").border-b 
+                    .mt-2
+                        a(href="#").btn.btn-login TIẾP TỤC MUA HÀNG
+                        a(href="#").btn.btn-register THANH TOÁN
+
+                      
+                        
+
+
+

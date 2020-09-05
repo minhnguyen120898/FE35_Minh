@@ -1,0 +1,34 @@
+extends index.pug
+block main-content
+    section.login
+        .container
+            block breadcrumb
+                ul.breadcrumb
+                    li 
+                        a(href="index.html") Home
+                    li
+                        a(href="#") Đăng nhập
+            block login
+                .login__wrap
+                    .row
+                        .col-12.col-lg-6
+                            h3 THÔNG TIN ĐĂNG NHẬP
+                            form(action="" method="post").login__form
+                                label(for="name") Họ và tên:
+                                    span *
+                                input(type="text" name="name" required)
+                                label(for="email") Email:
+                                    span *
+                                input(type="email" name="email" required)
+                                input(type="checkbox" name="rememberme" checked )
+                                label(for="rememberme") Ghi nhớ đăng nhập
+                                a(href="#").text-orange
+                                    u Bạn quên mật khẩu?
+                                button(type="submit").btn.btn-login ĐĂNG NHẬP
+                        .col-12.col-lg-6
+                            h3 BẠN CHƯA CÓ TÀI KHOẢN ?
+                            p.text-secondary.
+                                Đăng kí tài khoản để mua hàng nhanh hơn. Theo dõi dơn đặt hàng, vận chuyển.
+                                Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tôi.
+                            a(href="register.html").btn.btn--orange ĐĂNG KÝ
+                    

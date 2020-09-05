@@ -1,0 +1,35 @@
+.btn {
+    font-family: $my-font;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btn--orange{
+    @include btn($color-orange,white,10px,20px,8px);
+}
+.btn-buyNow{
+    @include btn($color-orange,white,10px,20px,8px);
+}
+.btn-detail{
+    @include btn(black,white,10px,10px,8px);
+    margin-left: 15px;
+}
+.btn-detail-s{
+    @include btn(transparent,black,10px,20px,8px);
+    margin-left: 15px;
+    border: 1px solid black;
+}
+.btn-new{
+    @include btn(none,$text-main,10px,20px,0px);
+}
+.btn-login {
+    @include btn(black,white,10px,20px,8px);
+    margin-top: 20px;
+}
+.btn-register {
+    @include btn($color-orange,white,10px,20px,8px);
+    margin-top: 20px;
+}
+.btn:hover{
+    opacity: 0.8;
+}

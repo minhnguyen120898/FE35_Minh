@@ -1,0 +1,44 @@
+extends index.pug
+block main-content
+    section.register
+        .container
+            block breadcrumb
+                ul.breadcrumb
+                    li 
+                        a(href="index.html") Home
+                    li
+                        a(href="#") Đăng ký
+            .register__wrap
+                form(action="" method="post").register__form
+                    h3 THÔNG TIN CÁ NHÂN
+                    mixin name_email()
+                        .row
+                            .col-12.col-lg-6
+                                label(for="uname") Họ và tên:
+                                    span *
+                                input(type="text" name="uname" required)
+                            .col-12.col-lg-6
+                                label(for="umail") Email:
+                                    span *
+                                input(type="email" name="umail" required)
+                    +name_email()
+                    .row
+                        .col-12.col-lg-6
+                            label(for="uphone") Số điện thoại:
+                                span *
+                            input(type="text" name="uphone" required)
+                        .col-12.col-lg-6
+                            label(for="uaddress") Địa chỉ:
+                                span *
+                            input(type="text" name="uaddress" required)
+                    .row
+                        .col-12
+                            input(type="checkbox" name="regSendMail" checked )
+                            label(for="regSendMail").text-secondary
+                                i Đăng kí nhận tin tức qua email
+                    h3 THÔNG TIN ĐĂNG NHẬP
+                    +name_email()
+                    .row
+                        .register__btn-group
+                            a(href="index.html").btn.btn-login QUAY LẠI
+                            button(type="submit").btn.btn-register ĐĂNG KÍ

@@ -1,0 +1,32 @@
+.errorpage {
+    position: relative;
+    height: 75vh;
+    &__content {
+        padding-top: 20px;
+        text-align: center;
+        width: 60%;
+        padding-left: 15px;
+        &__title{
+            font-weight: 1000;
+            color: $color-orange;
+            font-size: 100px;
+            letter-spacing: 5;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        &__desc {
+            font-size: 18px;
+        }
+        a {
+            text-align: center;
+            display: inline-block;
+        }       
+    }
+    &__img {
+        position: absolute;
+        right: 100px;
+        top: 20px;
+        max-width: 42.5%;
+        z-index: -10;
+    }
+}

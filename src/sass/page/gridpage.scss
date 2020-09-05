@@ -1,0 +1,54 @@
+.gridpage {
+    &--icon {
+        color: $color-orange;
+    }
+    &__product {
+        margin-top: 40px;
+        &__list {
+            @include flex(space-between,center);
+            margin: 0;
+            padding: 0;
+            li {
+                width: 30%;
+                margin-bottom: 30px;
+                // @extend %border;
+                height: 325px;
+                position: relative;
+            }
+        }
+        &__box {
+            width: 100%;
+            height: 100%;
+            padding: 15px 10px;
+            transition: .55s all ease-out;
+            background: #fff;
+            box-shadow: 0 0 8px $color-smoke;
+            overflow: hidden;
+            text-align: center;
+            img {
+                @include prod-img(10);
+            }
+            h3 {
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+        &__group{
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+        }   
+        &__box:hover {
+            height: 355px;
+            z-index: 20;
+            box-shadow: 4px 4px 12px $color-smoke;
+            // @extend %border-r;
+            @extend %border-b;
+           // @extend %border-l1;
+        }
+        &__box:hover &__group {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

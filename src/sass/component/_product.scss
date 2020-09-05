@@ -1,0 +1,98 @@
+.product {
+    &__top{
+        @include flex(space-between,center);
+        margin: 30px 0;
+    }
+    &__title {
+        display: flex;
+        h2 {@extend %font-title;}
+    }
+    &__icon4 {
+        @include icon4(10px);
+        margin-left: 10px;
+    }
+    &__pagination{
+        display: flex;
+        align-items: center;
+        .btn-pre{
+            background-color: black;
+            color: white;
+            width: 33px;
+            height: 35px;
+        }
+        .btn-next{
+            background-color: white;
+            color: black;
+            width: 33px;
+            height: 35px;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__prod {
+        width: 77%;
+        &__list{
+            @include  flex(space-between,center);
+            padding: 0 0 0 30px;
+            margin: 0;
+        }
+        &__item{
+            width: 30%;
+            margin-bottom: 30px;
+            //@extend %border;
+            height: 325px;
+            position: relative;
+        }
+        &__box{
+            width: 100%;
+            height: 100%;
+            padding: 15px 10px;
+            transition: .55s all ease-out;
+            background: #fff;
+            box-shadow: 0 0 8px $color-smoke;
+            overflow: hidden;
+            text-align: center;
+            img {
+                @include prod-img(10);
+            }
+            h3 {
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+        &__img {
+            font-size: 22px;
+            line-height: 56px;
+            @include flex(center,center);
+            background: #fff;
+            padding: 5px;
+        }
+        &__group{
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+        }   
+        &__box:hover {
+            height: 355px;
+            z-index: 20;
+            box-shadow: 4px 4px 12px $color-smoke;
+            @extend %border-r;
+            @extend %border-b;
+            @extend %border-l1;
+        }
+        &__box:hover &__group {
+            visibility: visible;
+            opacity: 1;
+        }
+    }  
+    &__category{
+        @include flex(none,none);
+        margin-right: 15px;   
+        li {
+            @extend %border;
+            margin-right: 5px;
+        } 
+    }
+}

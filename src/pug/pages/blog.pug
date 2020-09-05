@@ -1,0 +1,74 @@
+extends listpage.pug
+block breadcrumb
+    ul.breadcrumb
+        li 
+            a(href="index.html") Home
+        li
+            a(href="#") Tin tức
+    hr.mb-3
+block list-detail-menu
+    mixin blog_menu_title(name)
+        .blog__menu__title(class!=attributes.class)
+            img(src="./assets/images/megadrop2.png", alt="").product__icon4.color-secondary
+            a(href="#")
+                h3= name
+    .blog__menu__list
+        +blog_menu_title("Danh mục tin tức").blog__menu__title--border
+        ul               
+            each item in blg_arrMenu
+                li.blog__menu__item
+                    a(href="#")
+                        h3= item
+    .blog__menu__list.mt-3
+        +blog_menu_title("Thư viện hình ảnh")
+        ul.blog__menu__lib
+            each item in blg_imgMenu
+                li.blog__menu__lib__item
+                    img(src=item, alt="")
+    .blog__menu__list.mt-3
+        +blog_menu_title("Thẻ tags")
+        ul.blog__menu__tags
+            each item in blg_tags
+                li.blog__menu__tags__item
+                    span
+                        a(href="#")= item
+block list-detail-promotion
+block list-detail-product
+    .blog__main
+        mixin blog_news(src,name)
+            .blog__news
+                a(href="blogdetail.html").blog__news__img
+                    img(src=src, alt="")
+                h3 THẾ HỆ MÁY KHOAN CẮT CNC ĐẦU TIÊN ĐÃ ĐƯỢC TÁI SỬ DỤNG
+                .blog__news__box
+                    p.blog__news__date.
+                        Thứ năm, ngày 23/10/2015 8:00 AM
+                    .blog__news__author
+                        i(class="fas fa-user")
+                        p 
+                            i Đăng bởi
+                            span.text-orange.
+                                Design Team
+                    p
+                        i(class="fas fa-comments")
+                        i 12 Bình luận
+                .blog__news__desc.d-none
+                    p. 
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of denounc
+                        But I must explain to you how all this mistaken idea of denouncBut I must explain to you how all this mistaken idea of ...
+                        span.text-orange [Đọc tiếp]
+            hr.my-3
+        each item in blg_imgmain
+            +blog_news(item)
+        .pagination
+            a(href="#") Trang trước
+            a(href="#").active 1
+            - for(let i=2;i<4;i++)
+                a(href="#")= i
+            a(href="#") Trang cuối
+
+

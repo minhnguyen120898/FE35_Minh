@@ -1,0 +1,43 @@
+extends listpage.pug
+block list-grid-content
+    .listpage__order.clear
+        .listpage__order__left
+            .listpage__order__type
+                span.text-black Sắp xếp theo: 
+                select#order(name="order")
+                    option(value="Tên sản phẩm" selected) Tên sản phẩm 
+                    option(value="Giá") Giá
+            .listpage__order__show   
+                span.text-black Show:
+                select#order1(name="order1")
+                    option(value="18" selected) 18
+                    option(value="10") 10   
+        .listpage__order__right
+            a(href="listpage.html").listpage__order__box
+                i(class="fas fa-bars")
+            a(href="#").listpage__order__box
+                i(class="fas fa-th").gridpage--icon   
+    .gridpage__product
+        ul.gridpage__product__list
+            mixin li-listpage-prod(src)
+                li
+                    .gridpage__product__box.clear
+                        .gridpage__product__img
+                            img(src=src, alt="")
+                        .gridpage__product__box__content
+                            span.product-price 1.550.000 Đ
+                            h3
+                                strong MÁY KHOAN BLACK DECKER
+                            .row.mb-3
+                                .col-12
+                                    - for(let i = 0;i < 4; i++)
+                                        i(class="fas fa-star").rated
+                                    i(class="far fa-star")
+                                    span.text-rate (12 đánh giá)
+                            .row.gridpage__product__group
+                                .gridpage__product__box__btn.pl-2
+                                    a(href="#").btn.btn-buyNow Mua ngay
+                                .gridpage__product__box__btn
+                                    a(href="#").btn.btn-detail Xem chi tiết                                          
+            each item in gp_product
+                +li-listpage-prod(item)
