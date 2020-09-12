@@ -1,0 +1,68 @@
+{
+    "products" : [
+        {
+            "id": 1,
+            "image": "./assets/images/den.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 2350000,
+            "inCart": 1
+        },
+        {
+            "id": 2,
+            "image": "./assets/images/Untitled-10.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 5000000,
+            "inCart": 1
+        },
+        {
+            "id": 3,
+            "image": "./assets/images/vang.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 3000000,
+            "inCart": 1
+        },
+        {
+            "id": 4,
+            "image": "./assets/images/Untitled-7.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 2000000,
+            "inCart": 1
+        },
+        {
+            "id": 5,
+            "image": "./assets/images/cam.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 2250000,
+            "inCart": 1
+        },
+        {
+            "id": 6,
+            "image": "./assets/images/Untitled-14.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 4000000,
+            "inCart": 0
+        },
+        {
+            "id": 7,
+            "image": "./assets/images/cua1.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 2750000,
+            "inCart": 1
+        },
+        {
+            "id": 8,
+            "image": "./assets/images/xach.png",
+            "name":"MÁY KHOAN BLACK DECKER",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum sodales nisi quis facilisis. Fusce dictum bibendum ligula ut euismod. Praesent dapibus sapien a elit pretium imperdiet. Pellentesque tristique dui metus",
+            "price": 3350000,
+            "inCart": 1
+        }       
+    ]
+}

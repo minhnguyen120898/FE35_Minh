@@ -82,6 +82,13 @@
             max-width: 42.5%;
         }
     }
+    .listpage {
+        &__product{
+            &__img {
+                width: 120px;
+            }
+        }
+    }
 }
 @media screen and (max-width: 767px){
     .main-menu{   
@@ -346,11 +353,15 @@
             &__box{
                 &__content {
                     width: 100%;
+                    text-align: center;
                     h3 {
                         padding-left: 15px;
                     }
                     .text-secondary {
                         display: none;
+                    }
+                    .row{
+                        justify-content: center;
                     }
                 }
             }

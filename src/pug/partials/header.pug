@@ -102,21 +102,22 @@ mixin list(name,arr)
                         span.badge 0
                 .cart__dropdown
                     ul.cart__list
-                        mixin cart-item(src)
-                            li.cart__item
-                                img(src=src, alt="").cart-image
-                                .cart__desc
-                                    h3  máy khoan black decker
-                                    p 1 x 
-                                        span 1.250.000 Đ
-                                .cart__close
-                                    i(class="fas fa-times")
-                        +cart-item("./assets/images/Untitled-10.png")
-                        +cart-item("./assets/images/Untitled-9.png")
-                        +cart-item("./assets/images/Untitled-16.png")
-                        li.cart__item.justify-flex-end
-                            .cart__desc.mr-3
-                                h3 Tổng tiền: 
-                                    span 4.560.000 Đ
-                                a(href="#").btn.btn--orange THANH TOÁN
+                        //- mixin cart-item(src)
+                        //-     li.cart__item.cart__item--temporary
+                        //-         img(src=src, alt="").cart-image
+                        //-         .cart__desc
+                        //-             h3  máy khoan black decker
+                        //-             p 1 x 
+                        //-                 span 1.250.000 Đ
+                        //-         .cart__close
+                        //-             i(class="fas fa-times")
+                        //- +cart-item("./assets/images/Untitled-10.png")
+                        //- +cart-item("./assets/images/Untitled-9.png")
+                        //- +cart-item("./assets/images/Untitled-16.png")
+                    .cart__item.justify-flex-end
+                        .cart__desc.mr-3
+                            h3 Tổng tiền: 
+                                span 0
+                                span &nbsp; Đ
+                            a(href="cart.html").btn.btn--orange THANH TOÁN
             .clear 

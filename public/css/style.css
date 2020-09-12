@@ -1896,7 +1896,9 @@ a {
     position: absolute;
     right: 30px;
     top: 0;
-    max-width: 42.5%; } }
+    max-width: 42.5%; }
+  .listpage__product__img {
+    width: 120px; } }
 
 @media screen and (max-width: 767px) {
   .main-menu .menu__toggle-collapse {
@@ -2067,11 +2069,14 @@ a {
   .listpage__order__right {
     display: none; }
   .listpage__product__box__content {
-    width: 100%; }
+    width: 100%;
+    text-align: center; }
     .listpage__product__box__content h3 {
       padding-left: 15px; }
     .listpage__product__box__content .text-secondary {
       display: none; }
+    .listpage__product__box__content .row {
+      justify-content: center; }
   .listpage__product__img {
     float: none;
     margin: 20 auto 0;

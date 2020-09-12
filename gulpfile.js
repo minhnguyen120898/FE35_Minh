@@ -30,7 +30,6 @@ function htmlTask() {
 
 function jsTask() { 
     return src(jsFiles) 
-    .pipe(concat('script.js')) 
     .pipe(dest('public/js')) 
 }
 

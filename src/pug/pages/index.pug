@@ -7,8 +7,6 @@ html
             link(rel="stylesheet", href="css/style.css")
             link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto")
             link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css")
-        block script
-            script(src="./js/script.js")
     body
         include ../base/base
         block header
@@ -280,4 +278,6 @@ html
                             .col-12.col-lg-3
                                 a(href="#").btn.btn--orange ĐĂNG KÍ
         block footer
-            include ../partials/footer 
+            include ../partials/footer
+        block script
+            script(src="js/cart-header.js")
