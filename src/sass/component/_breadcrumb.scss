@@ -1,8 +1,9 @@
 .breadcrumb {
     padding: 10px 0;
+    font-family: 'Open Sans', sans-serif;
     li {
         display: inline-block;
-        font-size: 18px;
+        font-size: 16px;
     }
     li+li::before {
         font-family: 'icomoon';

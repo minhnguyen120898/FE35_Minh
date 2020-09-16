@@ -1,0 +1,88 @@
+.payment{
+    li:nth-child(2)
+    i:after{
+        background-color:  rgb(32, 32, 32);
+    }
+    &__content{
+        @include flex(space-between,none);
+        &__left {
+            width: 70%;
+        }
+        &__right{
+            width: 25%;
+            padding-top: 51px;
+            font-size: 13px;
+        }
+        &__btn {
+            margin-top: 50px;
+            .btn-detail {
+                padding: 10px 20px;
+                margin-right: 10px;
+            }
+        }
+        &__info{
+            @extend %border-radius;
+            padding: 0 20px;
+            margin-bottom: 15px;
+            &__wrap {
+                span {
+                    color: $color-orange;
+                    font-weight: 700;
+                }
+            }
+        }
+        &__title{
+            font-size: 14px;
+            font-weight: bold;
+        }
+        &__cart {
+            padding: 0 20px;
+            @extend %border-radius;
+            margin-bottom: 20px;
+            ul {
+                padding: 0;
+                margin: 0;
+            }
+            p:last-child {
+                color: black;
+                font-weight: bold;
+            }
+        }
+        &__items{
+            h5 {
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+            p{
+                margin-top: 10px;
+                text-indent: 10px;
+                span:first-child{
+                    color: black;
+                    font-weight: 700;
+                }
+                span:last-child{
+                    color: red;
+                }
+            }
+        }
+        &__box {
+            @extend %border-radius;
+            label {
+                margin: 10px 20px;
+                display: block;
+                span {
+                    background-color: $color-orange;
+                    @extend %border-radius;
+                    padding: 5px;
+                    margin: 0 10px;
+                }
+            }
+            &__small {
+                p {
+                    padding-left: 40px;
+                    color: $color-orange;
+                }
+            }
+        }
+    }
+}

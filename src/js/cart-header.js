@@ -4,7 +4,7 @@ function updateCartNumber(){
     if(cart){
         var sumCart = 0;
         for (var s = 0; s < cart.length; s++) {
-            sumCart += cart[s].inCart;
+            sumCart += parseInt(cart[s].inCart);
         }
         document.querySelector(".cart .wrapper-badge span").innerHTML = sumCart;
     }
@@ -13,7 +13,7 @@ function updateCartNumber(){
     for (var index1 = 0;  index1 < cart.length;  index1++) {
         sumPrice += cart[index1].price * cart[index1].inCart;
     }
-    document.querySelector(".cart__dropdown .justify-flex-end .cart__desc span").innerHTML= sumPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    document.querySelector(".cart__dropdown .justify-flex-end .cart__desc span").innerHTML= sumPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")+"<sup>đ</sup>";
 }
 function rmCartItemsHeader(){
     if(document.querySelectorAll(".cart__item--temporary")){
@@ -31,15 +31,27 @@ function displayCartHeader(){
                             <img class="cart-image" src="${cart[t].image}" alt=""/>
                             <div class="cart__desc">
                             <h3>${cart[t].name}</h3>
-                            <p><span>${cart[t].inCart}</span> x <span>${cart[t].price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span></p>
+                            <p><span>${cart[t].inCart}</span> x <span>${cart[t].price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<sup>đ</sup></span></p>
                             </div>
                             <div class="cart__close" onclick="deleteCartItems(${cart[t].id})"><i class="fas fa-times"></i></div>
                         </li>`;
         }
     }
 }
+// navigation to cart page 
+document.getElementById("btn-nav").addEventListener('click',function(){
+    console.log(cart);
+    if(cart.length != 0){
+        document.getElementById("btn-nav").href = "./cart.html";
+    }
+    else{
+        alert("Giỏ hàng hiện tại đang trống!");
+    }
+})
+// end navigation to cart page 
 updateCartNumber();
 displayCartHeader();
+// delete items
 function deleteCartItems(cartId){
     for(var j = 0; j < cart.length; j++) {
         if (cart[j].id == cartId) {
@@ -50,4 +62,6 @@ function deleteCartItems(cartId){
     }
     updateCartNumber();
     displayCartHeader();
+    location.reload();
 }
+// end delete items

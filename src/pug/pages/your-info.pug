@@ -1,0 +1,68 @@
+extends index.pug
+block main-content 
+    .your-info
+        .container
+            ul.breadcrumb
+                li 
+                    a(href="index.html") Home
+                li
+                    a(href="cart.html") Giỏ hàng
+                li
+                    a(href="your-info.html") Thông tin thanh toán
+            hr
+            .wrapper-progress-bar
+                ul.progress-bar
+                    li
+                        i(class="fas fa-cart-plus")
+                        br
+                        i(class="fas fa-check").progress-bar__check                     
+                        p S1: Giỏ hàng
+                    li.progress-bar__active
+                        i(class="fas fa-info")
+                        br
+                        i(class="fas fa-sync-alt").progress-bar__check
+                        .d-flex 
+                            p S2: Thông tin
+                            .arrow-right
+                                span
+                                span
+                                span
+                    li
+                        i(class="fas fa-money-check-alt")
+                        br
+                        i(class="fas fa-times").progress-bar__check
+                        p S3: Thanh toán  
+            .your-info__content
+                .your-info__title 
+                    h3 STEP 2 : THÔNG TIN THANH TOÁN    
+                .your-info__main
+                    .row 
+                        .col-12.d-flex
+                            label(for="ihome")
+                                input(type="radio" name="iwhere" id="ihome" value="Nhà riêng" checked)
+                                |Nhà riêng
+                            label(for="iwork")
+                                input(type="radio" name="iwhere" id="iwork" value="Công ty")
+                                |Công ty
+                    .row
+                        .col-12.col-lg-6
+                            input(type="text" id="uname" placeholder="Họ và tên người nhận" required)
+                        .col-12.col-lg-6
+                            input(type="email" id="umail" placeholder="Email" required)
+                    .row
+                        .col-12
+                            input(type="text" id="uphone" placeholder="Số điện thoại" required)
+                        .col-12
+                            input(type="text" id="uaddress" placeholder="Địa chỉ" required)
+                    .row
+                        .col-12
+                            input(type="checkbox" name="regSendMail" checked )
+                            label(for="regSendMail").text-secondary
+                                i Đặt làm địa chỉ mặc định
+                    .row.your-info__btn-right
+                        .your-info__btn-group
+                            a(href="cart.html").btn.btn-detail QUAY LẠI
+                            button.btn.btn--orange#btn-next TIẾP TỤC
+block script
+    script(src="js/cart-header.js")
+    script(src="js/your-info.js")

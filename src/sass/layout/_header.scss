@@ -113,6 +113,7 @@
             background-color: $color-orange;       
         }
         &__link {
+            white-space: nowrap;
             color: white;
             font-size: 1.17em;
             font-weight: 500;

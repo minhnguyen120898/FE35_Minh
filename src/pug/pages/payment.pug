@@ -1,0 +1,75 @@
+extends index.pug
+block main-content 
+    .payment
+        .container
+            ul.breadcrumb
+                li 
+                    a(href="index.html") Home
+                li
+                    a(href="your-info.html") Thông tin thanh toán
+                li
+                    a(href="your-info.html") Thanh toán
+            hr
+            .payment__title 
+                h3 STEP 3 : THANH TOÁN    
+            .wrapper-progress-bar
+                ul.progress-bar
+                    li
+                        i(class="fas fa-cart-plus")
+                        br
+                        i(class="fas fa-check").progress-bar__check                     
+                        p S1: Giỏ hàng
+                    li
+                        i(class="fas fa-info")
+                        br
+                        i(class="fas fa-check").progress-bar__check
+                        p S2: Thông tin
+                    li.progress-bar__active
+                        i(class="fas fa-money-check-alt")
+                        br
+                        i(class="fas fa-sync-alt").progress-bar__check
+                        .d-flex 
+                            p S3: Thanh toán  
+                            .arrow-right
+                                span
+                                span
+                                span
+            .payment__content.clear                   
+                    .payment__content__left
+                        h3 1. Chọn hình thức giao hàng
+                        .payment__content__box
+                            label(for="send")
+                                input(type="radio" id="send" checked)
+                                span Miễn phí 
+                                |Giao tiêu chuẩn
+                            .payment__content__box__small
+                                p Giao hàng vào thứ hai, 21/09
+                                ul                               
+                        h3 2. Chọn hình thức thanh toán
+                        .payment__content__box    
+                            label(for="cash")
+                                input(type="radio" id="cash" name="pay" checked)
+                                |Thanh toán tiền mặt khi nhận hàng
+                            label(for="bank")
+                                input(type="radio" id="bank" name="pay")
+                                |Thanh toán bằng thẻ ATM nội địa/Internet Banking
+                            label(for="momo")
+                                input(type="radio" id="momo" name="pay")
+                                |Thanh toán bằng ví MoMo
+                            label(for="zalopay")
+                                input(type="radio" id="zalopay" name="pay")
+                                |Thanh toán bằng ZaloPay
+                        .payment__content__btn
+                            button.btn.btn-detail#btn-pre QUAY LẠI
+                            button.btn.btn--orange#btn-done HOÀN TẤT
+                    .payment__content__right
+                        .payment__content__info
+                            p.payment__content__title THÔNG TIN NGƯỜI NHẬN
+                        .payment__content__cart
+                            p.payment__content__title THÔNG TIN GIỎ HÀNG
+                            ul
+                            p#payment__content__money TỔNG TIỀN:
+block script
+    script(src="js/cart-header.js")
+    script(src="js/payment.js")
+                    

@@ -7,7 +7,32 @@ block main-content
                     a(href="index.html") Home
                 li
                     a(href="listpage.html") Giỏ hàng
-            hr
+            hr                        
+            .wrapper-progress-bar
+                ul.progress-bar
+                    li.progress-bar__active
+                        i(class="fas fa-cart-plus")
+                        br
+                        //- i(class="fas fa-check")
+                        i(class="fas fa-sync-alt").progress-bar__check
+                        .d-flex 
+                            p S1: Giỏ hàng
+                            .arrow-right
+                                span
+                                span
+                                span
+                    li
+                        i(class="fas fa-info")
+                        br
+                        i(class="fas fa-times").progress-bar__check
+                        p S2: Thông tin thanh toán
+                    li
+                        i(class="fas fa-money-check-alt")
+                        br
+                        i(class="fas fa-times").progress-bar__check
+                        p S3: Thanh toán
+            .cartpage__title 
+                h3 STEP 1 : THÔNG TIN GIỎ HÀNG   
             .cartpage__content
                 table
                     thead
@@ -39,15 +64,17 @@ block main-content
                             .col-7
                                 h4= name
                             .col-5
-                                span= price
-                    +cartpage-row("TỔNG TIỀN:","6.850.000 Đ")
-                    +cartpage-row("THUẾ(VAT):","685.000 Đ")
-                    +cartpage-row("THANH TOÁN:","7.520.000 Đ").border-b 
+                                span(id!=attributes.id)= price
+                    +cartpage-row("TỔNG TIỀN:","6.850.000 Đ")#cartpage__payment__all
+                    +cartpage-row("THUẾ(VAT):","685.000 Đ")#cartpage__payment__vat
+                    +cartpage-row("THANH TOÁN:","7.520.000 Đ").border-b#cartpage__payment__pay
                     .mt-2
-                        a(href="#").btn.btn-login TIẾP TỤC MUA HÀNG
-                        a(href="#").btn.btn-register THANH TOÁN
-
-                      
+                        a(href="listpage.html").btn.btn-login TIẾP TỤC MUA HÀNG
+                        a(href="your-info.html").btn.btn-register THANH TOÁN
+block script
+    script(src="js/cart-header.js")
+    script(src="js/cartpage.js")
+                    
                         
 
 

@@ -687,6 +687,27 @@
             font-size: 13px;
         }
     }
+    .progress-bar {
+        li {
+            i:first-child {
+                font-size: large;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 13px;
+                font-weight: bold;
+            }
+        } 
+        .arrow-right {
+            top: 90%;
+            right: 25%;
+        }
+    }
+    .your-info{
+        &__content {
+            width: 100%;
+        }
+    }
 }
 @media screen and (max-width: 320px){
     #slider {

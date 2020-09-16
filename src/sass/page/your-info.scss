@@ -1,0 +1,55 @@
+.your-info{
+    &__content {
+        width: 75%;
+        margin: auto;
+    }
+    &__title {  
+        padding: 5px 20px;
+        font-family: 'Open Sans', sans-serif;
+        background-color:#202020;
+        color: white;
+    }
+    &__main {
+        padding: 0 20px;
+        margin-bottom: 60px;
+        @extend %border;
+        label{
+            font-weight: 700;
+            margin-right: 50px;
+            font-size: 16px;
+            span {
+                display: inline-block;
+                margin-left: 5px;
+                color: red;
+                opacity: 0.8;
+            }
+        }
+        i {
+            font-size: 13px;
+            font-weight: 300;
+        }
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type=radio]{
+            font-size: larger;
+            margin: 20px 3px 10px 10px;
+        }
+    }
+    &__btn-right {
+        justify-content: flex-end;
+    }
+    &__btn-group {
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .btn {
+            margin-right: 15px;
+        }
+    }
+}

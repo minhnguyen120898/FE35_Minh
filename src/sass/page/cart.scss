@@ -1,7 +1,13 @@
 .cartpage {
+    font-family: 'Open Sans', sans-serif;
     &__content {
-        margin-top: 50px;
         overflow-x:auto;
+    }
+    &__title {
+        padding: 5px 20px;
+        font-family: 'Open Sans', sans-serif;
+        background-color: #202020;
+        color: white;
     }
     table{
         border-collapse: collapse;
